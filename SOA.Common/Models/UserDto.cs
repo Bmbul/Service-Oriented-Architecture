@@ -1,3 +1,5 @@
 ﻿namespace SOA.Common.Models;
 
-public record UserDto(string Fullname);
+public record UserDto(string Fullname, float Balance);
+
+public record UserEntityDto(string FirstName, string LastName, float Balance, int Id);

@@ -10,4 +10,6 @@ public class DataContext : DbContext
     }
 
     public DbSet<UserEntity> Users { get; set; } = null!;
+
+    public DbSet<TransactionHistoryEntity> TransactionHistory { get; set; } = null!;
 }

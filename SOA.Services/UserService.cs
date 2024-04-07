@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using SOA.Common.Models;
 using SOA.Data.Entities;
 using SOA.Db.Repositories;
@@ -49,7 +48,14 @@ public class UserService : IUserService
         await _userRepository.DeleteAsync(user);
     }
 
-    public async Task<PagedResult<UserDto>> GetAllUsersAsync(int skip, int take)
+    public async Task<IEnumerable<UserEntityDto>> GetAllUsersAsync()
+    {
+        var allUsers = await _userRepository.GetAllAsync();
+
+        return _mapper.Map<IEnumerable<UserEntityDto>>(allUsers);
+    }
+
+    public async Task<PagedResult<UserDto>> GetUsersAsync(int skip, int take)
     {
         var users = await _userRepository.GetPagedAsync(skip, take);
 

@@ -19,8 +19,15 @@ public class UserController : ControllerBase
     [HttpPost]
     public async Task<ActionResult> CreateUser([FromBody] CreateUserRequest request)
     {
-        var result = await _userService.CreateAsync(request.firstName, request.lastName);
-        return Ok(result);
+        try
+        {
+            var result = await _userService.CreateAsync(request.firstName, request.lastName);
+            return Ok(result);
+        }
+        catch (ApplicationException ex)
+        {
+            return BadRequest(ex.Message);
+        }
     }
 
     [HttpDelete]
@@ -34,7 +41,15 @@ public class UserController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<PagedResult<UserDto>>> GetUsers([FromQuery] int skip = 0, [FromQuery] int take = 100)
     {
-        var users = await _userService.GetAllUsersAsync(skip, take);
+        var users = await _userService.GetUsersAsync(skip, take);
+
+        return Ok(users);
+    }
+
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<UserEntityDto>>> GetAllUsers()
+    {
+        var users = await _userService.GetAllUsersAsync();
 
         return Ok(users);
     }
