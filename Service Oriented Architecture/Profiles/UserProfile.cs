@@ -9,6 +9,8 @@ public class UserProfile : Profile
     public UserProfile()
     { 
         CreateMap<UserEntity, UserDto>()
-            .ConstructUsing(src => new UserDto($"{src.FirstName} {src.LastName}"));
+            .ConstructUsing(src => new UserDto($"{src.FirstName} {src.LastName}", src.Balance));
+
+        CreateMap<UserEntity, UserEntityDto>();
     }
 }

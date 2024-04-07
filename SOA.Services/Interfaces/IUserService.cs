@@ -8,5 +8,7 @@ public interface IUserService
 
     Task DeleteAsync(int userId);
 
-    Task<PagedResult<UserDto>> GetAllUsersAsync(int skip, int take);
+    Task<PagedResult<UserDto>> GetUsersAsync(int skip, int take);
+
+    Task<IEnumerable<UserEntityDto>> GetAllUsersAsync();
 }
