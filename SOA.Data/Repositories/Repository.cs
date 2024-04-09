@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SOA.Common.Models;
 using SOA.Data.Data;
-using SOA.Db.Repositories;
-
 namespace SOA.Repositories;
 
 public class Repository<T> : IRepository<T> where T : class

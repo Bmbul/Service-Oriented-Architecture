@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SOA.Common.Models;
 
-namespace SOA.Db.Repositories;
+namespace SOA.Repositories;
 
 public interface IRepository<T> where T : class
 {

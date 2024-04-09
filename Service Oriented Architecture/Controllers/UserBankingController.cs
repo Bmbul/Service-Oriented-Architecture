@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Service_Oriented_Architecture.Dtos;
+using SOA.Dtos;
 using SOA.Services.Interfaces;
 
 namespace SOA.Controllers;
@@ -24,7 +24,7 @@ public class UserBankingController : ControllerBase
             return Ok(result);
         }
         catch (InvalidOperationException ex)
-        {
+        {   
             return BadRequest(ex.Message);
         }
         catch (KeyNotFoundException ex)

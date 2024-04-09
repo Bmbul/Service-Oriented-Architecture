@@ -1,7 +1,7 @@
-﻿using Service_Oriented_Architecture.Dtos;
+﻿using SOA.Dtos;
 using SOA.Common.Enums;
 using SOA.Data.Entities;
-using SOA.Db.Repositories;
+using SOA.Repositories;
 using SOA.Services.Interfaces;
 
 namespace SOA.Services;

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using SOA.Common.Models;
 using SOA.Data.Entities;
-using SOA.Db.Repositories;
+using SOA.Repositories;
 using SOA.Services.Interfaces;
 
 namespace SOA.Services;

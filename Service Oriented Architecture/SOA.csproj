@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SOA.Common\SOA.Common.csproj" />
+    <ProjectReference Include="..\SOA.Data\SOA.Data.csproj" />
     <ProjectReference Include="..\SOA.Services\SOA.Services.csproj" />
   </ItemGroup>
 

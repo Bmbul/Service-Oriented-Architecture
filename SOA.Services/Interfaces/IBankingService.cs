@@ -1,4 +1,4 @@
-﻿using Service_Oriented_Architecture.Dtos;
+﻿using SOA.Dtos;
 
 namespace SOA.Services.Interfaces;
 

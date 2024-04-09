@@ -1,7 +1,6 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using SOA.Data.Data;
-using SOA.Db.Repositories;
 using SOA.Repositories;
 using SOA.Services.Interfaces;
 using SOA.Services;
